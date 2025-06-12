@@ -17,13 +17,14 @@ export class MovieController {
 	create(@Body() dto: MovieDto) {
 		return this.movieService.create(dto);
 	}
-	@Put(':id')
-	update(@Param('id') id: string, @Body() dto: MovieDto) {
-		return this.movieService.update(id, dto);
-	}
+
 	@Get(':id')
 	findById(@Param('id') id: string) {
 		return this.movieService.findById(id);
+	}
+	@Put(':id')
+	update(@Param('id') id: string, @Body() dto: MovieDto) {
+		return this.movieService.update(id, dto);
 	}
 
 	@Delete(':id')
